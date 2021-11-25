@@ -1,7 +1,7 @@
 {
-  "name": "arco-design-pro",
+  "name": "wiki",
   "version": "1.0.0",
-  "description": "Arco Design Pro",
+  "description": "wiki",
   "scripts": {
     "prepublishOnly": "npm run build",
     "dev": "arco-scripts dev:site --port 9090",
@@ -90,9 +90,5 @@
   "peerDependencies": {
     "@arco-design/web-react": ">=2.0.0"
   },
-  "licenses" : [
-    { "type" : "MyLicense"
-    , "url" : ""
-    }
-  ]
+  "license" : "MIT"
 }
