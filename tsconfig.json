@@ -12,7 +12,7 @@
     "declaration": true,
     "outDir": "es",
     "lib": ["es5", "dom"],
-    "types": [],
+    "types": ["node"],
     "resolveJsonModule": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
