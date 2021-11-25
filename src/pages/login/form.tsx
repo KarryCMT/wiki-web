@@ -33,6 +33,8 @@ export default function LoginForm() {
     axios
       .post('/api/user/login', params)
       .then((res) => {
+        console.log(res,'跳转首页');
+        return;
         const { status, msg } = res.data;
         if (status === 'ok') {
           afterLoginSuccess(params);
