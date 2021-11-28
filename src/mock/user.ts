@@ -3,7 +3,7 @@ import setupMock from '../utils/setupMock';
 
 setupMock({
   setup() {
-    Mock.XHR.prototype.withCredentials = true;
+    Mock.XHR.prototype.withCredentials = false;
 
     // 用户信息
     Mock.mock(new RegExp('/api/user/userInfo'), () => {
@@ -25,8 +25,8 @@ setupMock({
 
     // 登录
     Mock.mock(new RegExp('/api/user/login'), (params) => {
-      console.log(params,'拿到登录参数');
-      
+      console.log(params, '拿到登录参数');
+
       const { userName, password } = JSON.parse(params.body);
       if (!userName) {
         return {

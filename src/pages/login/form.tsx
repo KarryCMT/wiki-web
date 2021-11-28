@@ -6,12 +6,13 @@ import axios from 'axios';
 import styles from './style/index.module.less';
 import history from '../../history';
 
+declare let hexMd5: any;
+
 export default function LoginForm() {
   const formRef = useRef<FormInstance>();
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [rememberPassword, setRememberPassword] = useState(false);
-
   function afterLoginSuccess(params) {
     // 记住密码
     if (rememberPassword) {
@@ -29,17 +30,17 @@ export default function LoginForm() {
 
   function login(params) {
     setErrorMessage('');
+    params.password = hexMd5(`${params.password}!@#QWERT`);
     setLoading(true);
     axios
-      .post('/api/user/login', params)
+      .post('http://127.0.0.1:8880/user/login', params)
       .then((res) => {
-        console.log(res,'跳转首页');
-        return;
-        const { status, msg } = res.data;
-        if (status === 'ok') {
+        console.log(res, '跳转首页');
+        const { success, message } = res.data;
+        if (success) {
           afterLoginSuccess(params);
         } else {
-          setErrorMessage(msg || '登录出错，请刷新重试');
+          setErrorMessage(message || '登录出错，请刷新重试');
         }
       })
       .finally(() => {

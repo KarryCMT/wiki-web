@@ -13,7 +13,9 @@ function DetailTable() {
     page: 1,
     pageSize: 10,
     roomNumber: '#3032',
-    startTime: dayjs(new Date()).subtract(1, 'day').format('YYYY-MM-DD'),
+    startTime: dayjs(new Date())
+      .subtract(1, 'day')
+      .format('YYYY-MM-DD'),
     endTime: dayjs(new Date()).format('YYYY-MM-DD'),
   });
   const [tableData, setTableData] = useState({ list: [], total: 0 });

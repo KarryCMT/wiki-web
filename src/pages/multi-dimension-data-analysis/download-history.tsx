@@ -15,7 +15,12 @@ export default () => {
   const locale = useLocale();
   const chartTheme = useChartTheme();
   const [searchParams, setSearchParams] = useState({
-    time: [dayjs().subtract(1, 'day').format(DATE_FORMAT), dayjs().format(DATE_FORMAT)],
+    time: [
+      dayjs()
+        .subtract(1, 'day')
+        .format(DATE_FORMAT),
+      dayjs().format(DATE_FORMAT),
+    ],
     showCompetitor: false,
   });
   const [data, setData] = useState([]);

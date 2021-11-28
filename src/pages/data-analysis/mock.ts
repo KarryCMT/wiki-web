@@ -16,7 +16,7 @@ setupMock({
     });
 
     Mock.mock(new RegExp('/api/feedbackList'), (params) => {
-      const { page = 1, pageSize = 10 } = qs.parseUrl(params.url).query as unknown as {
+      const { page = 1, pageSize = 10 } = (qs.parseUrl(params.url).query as unknown) as {
         page: number;
         pageSize: number;
         roomNumber: string;

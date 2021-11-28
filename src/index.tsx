@@ -13,6 +13,7 @@ import PageLayout from './layout/page-layout';
 import Setting from './components/Settings';
 import { GlobalContext } from './context';
 import './style/index.less';
+import './utils/md5';
 import './mock';
 import Login from './pages/login';
 import checkLogin from './utils/checkLogin';

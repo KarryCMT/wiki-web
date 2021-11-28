@@ -21,7 +21,7 @@ setupMock({
     });
 
     Mock.mock(new RegExp('/api/downloadHistory'), (params) => {
-      const { showCompetitor } = qs.parseUrl(params.url).query as unknown as {
+      const { showCompetitor } = (qs.parseUrl(params.url).query as unknown) as {
         roomNumber: string;
         startTime: string;
         showCompetitor: string;
